@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pertemuan4/widgets/chip_widget.dart';
-import 'package:pertemuan4/widgets/header_widget.dart';
-import 'package:pertemuan4/widgets/quest_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:pertemuan4/pages/register_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,44 +12,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Adventure Guild',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Adventure Guild',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-
-          backgroundColor: Colors.purpleAccent,
-        ),
-        body: Padding(
-          padding: const EdgeInsetsGeometry.all(20),
-          child: Column(
-            children: [
-              HeaderWidget(
-                name: "John Doe",
-                role: "Warrior",
-                level: 99,
-              ),
-              SizedBox(height: 20),
-              Row(
-                spacing:8,
-                children: [
-                  ChipWidget(label: "HP", icon: Icons.favorite, color: Colors.red, value: "100", bg: Colors.redAccent ),
-                  ChipWidget(label: "MP", icon: Icons.bolt, color: Colors.blue, value: "50", bg: Colors.blueAccent),
-                  ChipWidget(label: "SP", icon: Icons.star, color: Colors.yellow, value: "25", bg: Colors.yellowAccent),
-                ],
-              ),
-              Text('Active Quests'),
-              QuestWidget()
-            ],
-          ),
+      title: 'Solo Leveling Guild',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+        textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
+        scaffoldBackgroundColor: const Color(0xFF050A18),
+        colorScheme: ColorScheme.dark(
+          primary: const Color(0xFF1E90FF),
+          secondary: const Color(0xFF00C6FF),
+          surface: const Color(0xFF0D1B2A),
         ),
       ),
+      home: const RegisterPage(),
     );
   }
 }

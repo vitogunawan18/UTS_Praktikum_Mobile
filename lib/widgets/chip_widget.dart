@@ -1,47 +1,41 @@
 import 'package:flutter/material.dart';
 
+// Widget ini sudah dipindahkan ke dalam HeaderWidget sebagai _stat()
+// File ini tetap ada untuk menjaga kompatibilitas project
 class ChipWidget extends StatelessWidget {
   final String label;
-  final IconData icon;  
-  final Color color;
-  final String value;
-  final Color bg;
+  final IconData ikon;
+  final Color warna;
+  final int nilai;
 
+  const ChipWidget({
+    super.key,
+    required this.label,
+    required this.ikon,
+    required this.warna,
+    required this.nilai,
+  });
 
-  const ChipWidget({super.key, required this.label, required this.icon, required this.color, required this.value,required this.bg });
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
-        color: bg.withAlpha(50),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: const Color.fromARGB(255, 57, 152, 117).withAlpha(80),
-          width: 1,
-        ),
+        color: warna.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: warna.withOpacity(0.3)),
       ),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            IconData( icon.codePoint, fontFamily: icon.fontFamily, fontPackage: icon.fontPackage),
-            color: color,
-            size: 16,
-            
-          ),
-          SizedBox(width: 9),
+          Icon(ikon, size: 14, color: warna),
+          const SizedBox(width: 4),
           Text(
-            label,
+            '$label $nilai',
             style: TextStyle(
-              color: const Color.fromARGB(255, 68, 25, 25),
+              fontSize: 11,
+              color: warna,
               fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            value,
-            style: TextStyle(
-              color: const Color.fromARGB(255, 16, 41, 32).withAlpha(150),
-              fontStyle: FontStyle.italic,
             ),
           ),
         ],
