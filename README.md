@@ -1,17 +1,63 @@
-# UTS_Praktikum_Mobile
+# UTS Praktikum Pemrograman Mobile - Hunter Quest App ⚔️
 
-A new Flutter project.
+Project ini dibuat untuk memenuhi tugas **UTS Praktikum Pemrograman Mobile Semester 6**. Aplikasi ini bertema "Hunter & Guild" dengan fitur utama pendaftaran Hunter dan pengelolaan Quest misi.
 
-## Getting Started
+## 📋 Pemenuhan Instruksi Tugas
 
-This project is a starting point for a Flutter application.
+Aplikasi ini telah memenuhi seluruh kriteria yang ditetapkan dalam instruksi UTS:
 
-A few resources to get you started if this is your first Flutter project:
+1.  **Register Page**:
+    *   Input yang tersedia: **Nama, Password, Level, Rank, dan Job**.
+    *   **Validasi Input**:
+        *   Nama: Tidak boleh kosong.
+        *   Password: Minimal terdiri dari 8 karakter.
+        *   Level: Hanya boleh diisi angka (Numeric validation).
+        *   Rank: Hanya boleh diisi huruf (Regex validation).
+2.  **Integrasi Header**:
+    *   Seluruh data dari Register Page dikirim dan ditampilkan pada **Header Widget** di Home Page (Nama, Level, Rank, Job).
+3.  **Data Quest**:
+    *   Data misi sudah lengkap terdiri dari: **Title, Rank, Reward, Image, dan Description**.
+4.  **List Quest**:
+    *   Menampilkan **Icon Status** (untuk membedakan quest diambil atau belum), **Title**, dan **Rank**.
+5.  **Halaman Detail Quest**:
+    *   Dibuat halaman baru bernama `DetailQuestPage`.
+    *   Menampilkan **seluruh data** misi secara lengkap.
+    *   Terdapat tombol **"Ambil Quest"** di bagian bawah.
+6.  **Logika Status Quest**:
+    *   Ketika tombol "Ambil Quest" diklik, status quest akan berubah secara otomatis.
+    *   Icon pada daftar quest yang awalnya bulat/panah akan berubah menjadi **Checklist (Centang)**.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## 🚀 Fitur Tambahan (Kreativitas)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+*   **Tema Solo Leveling**: Menggunakan desain premium bertema *Dark Mode* dengan aksen *Electric Blue*.
+*   **Progress Bar Stats**: Statistik HP, MP, dan STR Hunter divisualisasikan dengan Progress Bar.
+*   **Tab Filtering**: Quest dibagi menjadi kategori *Semua, Aktif,* dan *Selesai* untuk UX yang lebih baik.
+*   **Hero Animation**: Transisi gambar yang mulus saat berpindah ke halaman detail.
+
+## 📂 Struktur Project
+
+```text
+lib/
+├── models/
+│   ├── quest_model.dart  # Data model Quest
+│   └── user_model.dart   # Data model Hunter (dari Register)
+├── pages/
+│   ├── register_page.dart # Implementasi Form & Validasi
+│   ├── home_page.dart     # Dashboard & List Quest (Tab System)
+│   └── detail_quest_page.dart # Halaman Detail & Logic "Ambil Quest"
+├── widgets/
+│   ├── header_widget.dart # Widget profil data Hunter
+│   ├── quest_widget.dart  # Widget item list quest dengan Icon Status
+│   └── chip_widget.dart   # Widget statistik tambahan
+└── main.dart              # Konfigurasi Tema & Entry Point
+```
+
+## 🛠️ Cara Menjalankan
+
+1. Pastikan Flutter SDK sudah terinstal.
+2. Clone repo: `https://github.com/vitogunawan18/UTS_Praktikum_Mobile.git`
+3. Jalankan `flutter pub get`
+4. Jalankan `flutter run`
+
+---
+**Status**: Tugas UTS Prak Mobile - Selesai sesuai instruksi.
